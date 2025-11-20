@@ -1,0 +1,320 @@
+/* 基础重置 */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Microsoft YaHei", sans-serif; 
+}
+body { 
+    line-height: 1.6; 
+    color: #333; 
+    background-color: #f9f9f9; 
+}
+
+/* 通用容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 导航栏 */
+header { 
+    background: #ffffff; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+}
+nav { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 1rem 2rem; 
+}
+.logo { 
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    color: #d32f2f; 
+    display: flex;
+    align-items: center;
+}
+.nav-links { 
+    display: flex; 
+}
+.nav-links a { 
+    margin-left: 25px; 
+    text-decoration: none; 
+    color: #333; 
+    font-weight: 500; 
+    transition: color 0.3s; 
+    position: relative;
+}
+.nav-links a:hover { 
+    color: #d32f2f; 
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #d32f2f;
+    transition: width 0.3s;
+}
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 移动端菜单按钮 */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #333;
+    margin-bottom: 4px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Hero 区域 */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    margin-top: 70px;
+}
+.hero-content {
+    max-width: 800px;
+}
+.hero h1 { 
+    font-size: 3rem; 
+    margin-bottom: 1rem; 
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.hero p { 
+    font-size: 1.2rem; 
+    margin-bottom: 2rem; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.btn { 
+    padding: 12px 30px; 
+    background: #d32f2f; 
+    color: white; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    transition: all 0.3s; 
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.btn:hover { 
+    background: #b71c1c; 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+
+/* 内容板块 */
+.section { 
+    padding: 5rem 0; 
+}
+.bg-light {
+    background-color: #f5f5f5;
+}
+.section h2 { 
+    text-align: center; 
+    margin-bottom: 3rem; 
+    font-size: 2.2rem; 
+    color: #333; 
+    position: relative;
+}
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #d32f2f;
+    margin: 15px auto;
+    border-radius: 2px;
+}
+
+.grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 2rem; 
+}
+.card { 
+    background: white; 
+    padding: 2rem; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    transition: all 0.3s; 
+    border-top: 4px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.card:hover { 
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-top: 4px solid #d32f2f;
+}
+.card h3 { 
+    color: #d32f2f; 
+    margin-bottom: 1rem; 
+    font-size: 1.3rem;
+}
+.card p {
+    color: #666;
+    flex-grow: 1;
+}
+
+/* 活动时间样式 */
+.event-date {
+    display: inline-block;
+    background: #f5f5f5;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: #d32f2f;
+    font-weight: bold;
+}
+
+/* 页脚 */
+footer { 
+    background: #333; 
+    color: white; 
+    padding: 3rem 0; 
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.footer-section h3 {
+    margin-bottom: 1rem;
+    color: #d32f2f;
+}
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-section a:hover {
+    color: #d32f2f;
+}
+.social-links { 
+    margin-top: 1rem; 
+}
+.social-links a { 
+    color: white; 
+    margin-right: 15px; 
+    text-decoration: none; 
+    transition: color 0.3s;
+    display: inline-block;
+}
+.social-links a:hover { 
+    color: #d32f2f; 
+}
+.copyright {
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+    text-align: center;
+}
+
+/* 回到顶部按钮 */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #d32f2f;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    border: none;
+    font-size: 1.2rem;
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    background: #b71c1c;
+    transform: translateY(-3px);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+    .hero h1 { 
+        font-size: 2.2rem; 
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+    }
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-links a {
+        margin: 10px 0;
+    }
+    .section {
+        padding: 3rem 0;
+    }
+    .footer-content {
+        text-align: center;
+    }
+    .container {
+        padding: 0 15px;
+    }
+}
